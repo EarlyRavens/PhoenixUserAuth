@@ -2,7 +2,7 @@ defmodule UserAuth.Session do
   alias UserAuth.User
 
   def login(params, repo) do
-    user = repo.get_by(User, username: String.downcase(params[:"username"]))
+    user = repo.get_by(User, email: String.downcase(params["email"]))
     case authenticate(user, params["password"]) do
       true -> {:ok, user}
       _    -> :error
@@ -16,12 +16,13 @@ defmodule UserAuth.Session do
     end
   end
 
-
   def current_user(conn) do
     id = Plug.Conn.get_session(conn, :current_user)
-    if id, do: UserAuth.get_by(User, id)
+    if id, do: UserAuth.Repo.get_by(User, id)
   end
 
-  def logged_in?(conn), do: !!current_user(conn)
+  def logged_in?(conn) do
+   # !!current_user(conn)
+  end
 
 end
