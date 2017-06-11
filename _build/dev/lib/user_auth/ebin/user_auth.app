@@ -5,8 +5,11 @@
                         'Elixir.UserAuth.ErrorView','Elixir.UserAuth.Gettext',
                         'Elixir.UserAuth.LayoutView',
                         'Elixir.UserAuth.PageController',
-                        'Elixir.UserAuth.PageView','Elixir.UserAuth.Repo',
-                        'Elixir.UserAuth.Router',
+                        'Elixir.UserAuth.PageView',
+                        'Elixir.UserAuth.Registration',
+                        'Elixir.UserAuth.RegistrationController',
+                        'Elixir.UserAuth.RegistrationView',
+                        'Elixir.UserAuth.Repo','Elixir.UserAuth.Router',
                         'Elixir.UserAuth.Router.Helpers',
                         'Elixir.UserAuth.User','Elixir.UserAuth.UserSocket',
                         'Elixir.UserAuth.Web']},
@@ -14,5 +17,5 @@
               {vsn,"0.0.1"},
               {mod,{'Elixir.UserAuth',[]}},
               {applications,[kernel,stdlib,elixir,phoenix,phoenix_pubsub,
-                             phoenix_html,cowboy,logger,gettext,phoenix_ecto,
-                             postgrex]}]}.
+                             phoenix_html,cowboy,logger,gettext,comeonin,
+                             phoenix_ecto,postgrex]}]}.
