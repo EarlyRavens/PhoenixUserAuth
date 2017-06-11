@@ -23,7 +23,6 @@ defmodule UserAuth.Web do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Blog.Session, only: [current_user: 1, logged_in?: 1]
     end
   end
 
@@ -53,6 +52,7 @@ defmodule UserAuth.Web do
       import UserAuth.Router.Helpers
       import UserAuth.ErrorHelpers
       import UserAuth.Gettext
+      import UserAuth.Session, only: [current_user: 1, logged_in?: 1]
     end
   end
 

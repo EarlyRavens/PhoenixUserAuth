@@ -11,6 +11,7 @@
                         'Elixir.UserAuth.RegistrationView',
                         'Elixir.UserAuth.Repo','Elixir.UserAuth.Router',
                         'Elixir.UserAuth.Router.Helpers',
+                        'Elixir.UserAuth.Session',
                         'Elixir.UserAuth.SessionController',
                         'Elixir.UserAuth.SessionView','Elixir.UserAuth.User',
                         'Elixir.UserAuth.UserSocket','Elixir.UserAuth.Web']},
