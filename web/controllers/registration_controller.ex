@@ -1,6 +1,7 @@
 defmodule UserAuth.RegistrationController do
   use UserAuth.Web, :controller
   alias UserAuth.User
+  # require Session
 
   def new(conn, _params) do
     changeset = User.changeset(%User{})
@@ -14,6 +15,7 @@ defmodule UserAuth.RegistrationController do
       {:ok, changeset} ->
         conn
         |> put_session(:current_user, changeset.id)
+        # |> put_session(:logged_in?, changeset.id)
         |> put_flash(:info, "Your account was created")
         |> redirect(to: "/")
       {:error, changeset} ->
