@@ -1,5 +1,8 @@
 defmodule UserAuth.Session do
   alias UserAuth.User
+  alias UserAuth.RegistrationController
+  # alias UserAuth.Session
+  # import Registration
 
   def login(params, repo) do
     user = repo.get_by(User, username: String.downcase(params["username"]))
@@ -22,7 +25,8 @@ defmodule UserAuth.Session do
   end
 
   def logged_in?(conn) do
-    !!current_user(conn)
+    id = Plug.Conn.get_session(conn, :current_user)
+    if id, do: logged_in? = true
   end
 
 end
