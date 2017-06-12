@@ -2,7 +2,7 @@ defmodule UserAuth.Session do
   alias UserAuth.User
 
   def login(params, repo) do
-    user = repo.get_by(User, email: String.downcase(params["email"]))
+    user = repo.get_by(User, username: String.downcase(params["username"]))
     case authenticate(user, params["password"]) do
       true -> {:ok, user}
       _    -> :error

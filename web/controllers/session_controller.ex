@@ -8,7 +8,7 @@ defmodule UserAuth.SessionController do
   end
 
   def create(conn, %{"session" => session_params}) do
-    Repo.get_by(User, email: session_params["email"])
+    Repo.get_by(User, username: session_params["username"])
     |> sign_in(session_params["password"], conn)
   end
 
