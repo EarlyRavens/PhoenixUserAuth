@@ -24,7 +24,12 @@ defmodule UserAuth.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", UserAuth do
-  #   pipe_through :api
-  # end
+  scope "/api", UserAuth do
+    pipe_through :api
+
+    get "/users", UserController, :index
+    get "/users/:id", UserController, :show
+    post "/users", UserController, :create
+    put "/users/:id", UserController, :update
+  end
 end
