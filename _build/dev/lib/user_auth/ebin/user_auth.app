@@ -1,6 +1,8 @@
 {application,user_auth,
              [{description,"user_auth"},
               {modules,['Elixir.Poison.Encoder.Any','Elixir.UserAuth',
+                        'Elixir.UserAuth.EarlyBirdController',
+                        'Elixir.UserAuth.EarlyBirdView',
                         'Elixir.UserAuth.Endpoint',
                         'Elixir.UserAuth.ErrorHelpers',
                         'Elixir.UserAuth.ErrorView','Elixir.UserAuth.Gettext',
