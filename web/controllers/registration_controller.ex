@@ -17,7 +17,7 @@ defmodule UserAuth.RegistrationController do
         |> put_session(:current_user, changeset.id)
         # |> put_session(:logged_in?, changeset.id)
         |> put_flash(:info, "Your account was created")
-        |> redirect(to: "/")
+        |> redirect(to: "/earlybird")
       {:error, changeset} ->
         conn
         |> put_flash(:info, "We were unable to create your account")

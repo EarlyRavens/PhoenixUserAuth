@@ -36,7 +36,7 @@ defmodule UserAuth.SessionController do
   defp sign_in(user, password, conn) when is_nil(user) do
     conn
     |> put_flash(:error, "Invalid email/password combination!")
-    |> redirect(to: page_path(conn, :index))
+    |> redirect(to: "/earlybird")
   end
 
   defp sign_in(user, password, conn) do
@@ -44,7 +44,7 @@ defmodule UserAuth.SessionController do
       conn
       |> put_session(:current_user, %{id: user.id, email: user.email})
       |> put_flash(:info, "Sign in successful!")
-      |> redirect(to: page_path(conn, :index))
+      |> redirect(to: "/earlybird")
     else
       conn
       |> put_session(:current_user, nil)
